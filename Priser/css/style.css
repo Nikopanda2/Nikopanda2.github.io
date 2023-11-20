@@ -1,0 +1,190 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1157da;
+    border-bottom: 1px solid #000000;
+    width: 100%;
+}
+
+.logo {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    40% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    45% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.logo img {
+    max-height: 120px;
+    animation: breathe 6s infinite;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 350px;
+    position: relative;
+}
+
+.menu li:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    color: #000;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+footer {
+    background-color: #1157da;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    width: 100%;
+    text-align: center;
+}
+
+.inquiries {
+    margin-bottom: 10px;
+    text-align: left;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-icons {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.social-icon img {
+    max-height: 30px;
+    max-width: 30px;
+    margin-right: 40px;
+}
+
+.copyright {
+    font-size: 14px;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.image-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 8px solid #888282;
+    flex: 1;
+}
+
+.image-box {
+    flex: 0 0 33.33%;
+    padding: 0;
+    text-align: center;
+    border: 5px solid #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 220px;
+    margin: 0;
+}
+
+/* Add styles for the prices section */
+.prices {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.prices-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.price-box {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    height: 200px;
+}
+
+.price-box h3 {
+    color: #1157da;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.price-button {
+    background-color: #1157da;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.price-text {
+    margin-top: 10px; /* Adjusted margin to move the text down */
+    opacity: 0; /* Set initial opacity to 0 */
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: #000;
+}
+
+.price-button:hover .price-text {
+    opacity: 1;
+}

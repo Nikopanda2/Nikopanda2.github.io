@@ -1,0 +1,254 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Style the header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1157da; /* You can add your desired background color here */
+    border-bottom: 1px solid #000000;
+}
+
+/* Style of the logo */
+.logo img {
+    max-height: 80px; /* height */
+}
+
+/* Style of the menu */
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+    position: relative; /* Add this line to create a relative positioning context */
+}
+
+.menu li:not(:last-child)::after {
+    content: '|'; /* Use a vertical bar as the separator */
+    position: absolute;
+    top: 50%;
+    right: -10px; /* Adjust the spacing as needed */
+    transform: translateY(-50%);
+    color: #000; /* Set the separator color to black (or your desired color) */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);/* Add both inner and outer outlines */
+    
+}
+
+/* Style the search panel */
+.search input {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.search button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    
+}
+.image-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 8px solid #888282;
+    flex: 1;
+}
+/* Style individual image boxes */
+.image-box {
+    flex: 0 0 33.33%; /* Set each image box to take up one-third of the container */
+    padding: 0;
+    text-align: center;
+    border: 5px solid #000;
+    background-size: cover; /* Use cover to maintain aspect ratio and cover the box */
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 220px; /* You can adjust the minimum height as needed */
+    margin: 0;
+}
+
+
+
+
+/* Background position adjustments for specific images */
+.image-box:nth-child(2) {
+    background-position: left center center right;
+}
+.image-box:nth-child(3) {
+    background-position: center left right center;
+}
+.image-box:nth-child(4) {
+    background-position:  center; /* Adjust the background position to center */
+    background-size: 200% 100%;
+    margin: 0; 
+}
+.image-box:nth-child(5) {
+    background-position: top center center right top;
+
+    min-height: 250px;
+}
+
+/* Adjust the width and margin for the last image */
+.image-box:last-child {
+    flex: 1;
+    min-height: 250px;
+    background-position: top;
+}
+/* Breathing animation for the logo */
+@keyframes breathe {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    40% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    45% {
+        transform: scale(1.1) rotate(5deg); /* Increase the tilt angle to 5 degrees */
+    }
+    50% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+
+.logo img {
+    max-height: 120px; /* height */
+    animation: breathe 6s infinite; /* Apply the animation every 5 seconds */
+}
+/* Updated CSS for the login button and form */
+.username-form {
+    display: inline-block;
+    margin-right: 20px; /* Adjusted margin-right */
+}
+
+.login-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.login-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 5px;
+    margin: 2px 0;
+    border: 1px solid #ccc;
+}
+
+.login-container .login-submit {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.login-message {
+    display: none;
+    color: red;
+}
+
+.username-form .login-button:focus + .login-container {
+    display: block;
+}
+
+.login-submit:focus ~ .login-message {
+    display: block;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    background-color: #1157da;
+    padding: 10px 20px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.footer-content {
+    width: 100%;
+    text-align: center;
+}
+
+.inquiries {
+    margin-bottom: 10px;
+    text-align: left;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-icons {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.social-icon img {
+    max-height: 30px; /* You can adjust the max height of the icons as needed */
+    max-width: 30px; /* You can adjust the max width of the icons as needed */
+    margin-right: 15px; /* Add margin to the right of the social media icons */
+}
+
+.copyright {
+    font-size: 14px;
+margin: 0,0,30px
+    margin-top auto;
+}
+
+/* Updated CSS for layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    flex: 1;
+    overflow-y: auto; /* Add vertical scroll if necessary */
+}
+
+.phone-number {
+    color: #ffffff;
+    text-decoration: none; /* Prevent the blue link underline */
+}
